@@ -559,22 +559,22 @@ define(["../promise/avalon.promise"], function(avalon) {
 
                 switch (avalon.type(data.valueAccessor())) {
                     case "array":
-                        data.valueResetor = function() {
+                        data.valueResetter = function() {
                             this.valueAccessor([])
                         }
                         break
                     case "boolean":
-                        data.valueResetor = function() {
+                        data.valueResetter = function() {
                             this.valueAccessor(false)
                         }
                         break
                     case "number":
-                        data.valueResetor = function() {
+                        data.valueResetter = function() {
                             this.valueAccessor(0)
                         }
                         break
                     default:
-                        data.valueResetor = function() {
+                        data.valueResetter = function() {
                             this.valueAccessor("")
                         }
                         break
@@ -654,7 +654,7 @@ define(["../promise/avalon.promise"], function(avalon) {
 /**
  @other
  <p>avalon.validation自带了许多<code>验证规则</code>，满足你一般的业务需求。</p>
- <p>大家可以在onReset的回调里得到第二个参数data, 然后调用data.valueResetor()将VM中的数据也置空,如布尔数据变false, 
+ <p>大家可以在onReset的回调里得到第二个参数data, 然后调用data.valueResetter()将VM中的数据也置空,如布尔数据变false, 
  数值数据变0,数组数据变[],字符串数组变成""
  
  </p>
